@@ -1,0 +1,81 @@
+<form bindsubmit="addPersonauth">
+ <view class="wContainer">
+
+        <view class="oneContainer">
+            <view class="one">
+                <view class="left">
+                     <!-- <text class="star">*</text>  -->
+                    <text>姓名</text>
+                </view>
+                <view class="right">
+                    <input name="personName" class="inputs" placeholder="请输入姓名" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <!-- <text class="star">*</text> -->
+                    <text>联系电话</text>
+                </view>
+                <view class="right">
+                   
+                    <input name="phone" class="inputs" placeholder="请输入联电话" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+              </view>
+            <!-- <view class="one">
+                <view class="left">
+                    <text class="star">*</text> 
+                    <text>电话</text>
+                </view>
+                <view class="right">
+                    
+                    <input name="phone" class="inputs" placeholder="请输入联系人电话" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+              </view> -->
+            <view class="one">
+                <view class="left">
+                    <!-- <text class="star">*</text> -->
+                    <text>邮箱</text>
+                </view>
+                <view class="right">
+                    
+                    <input name="email" class="inputs" placeholder="请输入联系人邮箱" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+            </view>
+
+            <view class="one" style="border-bottom: none;">
+                <view class="left">
+                    
+                    <text>详细地址</text>
+                </view>
+                <view class="right">
+                   
+                    <input name="address" class="inputs" placeholder="请输入详细地址" placeholderClass="inputPlace" type="text"
+                    ></input>
+                </view>
+            </view>
+            
+        </view>
+         
+        <view class="ID-mian">
+       <view class="card-name">请上传身份证认证</view>
+       <view class="card-cont">
+         <view class="card-list">
+            <image src='{{photos1}}' id="1" bindtap='chooseImage' mode='aspectFit' name="img1"></image>
+            <view>身份证正面照</view>
+         </view>
+         <view class="card-list">
+            <image src='{{photos2}}' id="2" bindtap='chooseImage1' mode='aspectFit'></image>
+            <view>身份证反面照</view>
+         </view>
+       
+        
+       </view>
+       <!-- <button bindtap="uploadImage">上传身份证</button> -->
+     </view>
+   
+        
+    </view>
+    <view class="btn">
+        <button form-type="submit" class="btns" style="width:100%" >提交认证</button>
+    </view>
+</form>

@@ -1,0 +1,256 @@
+<view class="container">
+    <form bindsubmit="addWareHouse">
+    <view class="title">联系人信息</view>
+    <view class="contentContainer">
+        <view class="listContainer">
+            <view class="one">
+                <view class="left">
+                    <text class="star">*</text>
+                    <text>联系人身份</text>
+                </view>
+                <view class="right">
+                    <picker bindchange="bindPickerIdentity" mode="selector" value="{{identityIndex}}" range="{{identityArr}}" range-key="iden">
+                    <view class="picker">
+                    {{identityArr[identityIndex].iden}}
+                    </view>
+                    </picker>
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                    <!-- <input class="inputs" placeholder="请输入" placeholderClass="inputPlace" type="text" name="contact_identity"></input> -->
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text class="star">*</text>
+                    <text>仓库企业名称</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="请输入" placeholderClass="inputPlace" type="text" name="company_name"></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text class="star">*</text>
+                    <text>负责人姓名</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="请输入" placeholderClass="inputPlace" type="text" name="contact_name"></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text class="star">*</text>
+                    <text>负责人手机号</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="请输入" placeholderClass="inputPlace" type="text" name="contact_phone"></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text>负责人邮箱</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="请输入" placeholderClass="inputPlace" type="text" name="contact_email"></input>
+                </view>
+            </view>
+            <!-- <view class="contact" wx:if="{{body.warehouse_contacts.length>0}}">
+                <view style="color:#818EA1;font-size:24rpx;margin-bottom:20rpx">新增联系人</view>
+                <view>
+                    <view class="contact-info">
+                        <text>{{body.warehouse_contacts[0].name}}</text>
+                        <text style="margin: 0 14rpx;">{{body.warehouse_contacts[0].phone}}</text>
+                        <text>{{body.warehouse_contacts[0].email}}</text>
+                    </view>
+                    <image bindtap="deletContact" mode="aspectFit" src="../../images/35@3x.png"></image>
+                </view>
+            </view>
+            <view class="add-contact" wx:else>
+                <view bindtap="addContact" class="btn">+新增联系人</view>
+            </view> -->
+        </view>
+    </view>
+    <view style="height:120rpx;"></view>
+    <view class="title">基本信息</view>
+    <view class="contentContainer">
+        <view class="one">
+            <view class="left">
+                <text class="star">*</text>
+                <text>租赁仓库名称</text>
+            </view>
+            <view class="right">
+                <view class="input">
+                    <input class="inputs" placeholder="请不要输入公司名称" placeholderClass="inputPlace" type="text" name="ware_name"></input>
+                </view>
+            </view>
+        </view>
+        <view class="one">
+            <view class="left">
+                <text class="star">*</text>
+                <text>仓库区域</text>
+            </view>
+            <view class="right">
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                    <view class="picker">
+                    {{region[0]}},{{region[1]}},{{region[2]}}
+                    </view>
+                </picker>
+                <image class="jian" src="../../images/6@3x.png"></image> 
+            </view>
+        </view>
+        <view class="desc" style="border-bottom: 1rpx solid #ededed;">
+            <view class="top">
+                <text class="star">*</text>详细地址
+            </view>
+            <view class="textarea">
+                <view class="input">
+                    <view bindtap="toMap" class="in">{{address}}</view>
+                    <view hidden="true">{{latitude}}{{longitude}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="one">
+            <view class="left">
+                <text class="star">*</text>
+                <text>租赁起价</text>
+            </view>
+            <view class="right">
+                <view class="input">
+                    <input class="inputs" placeholder="请填写" placeholderClass="inputPlace" type="text" name="price"></input>
+                </view>
+                <view class="unit">元/㎡·天 起</view>
+            </view>
+        </view>
+        <view class="one">
+            <view class="left">
+                <text class="star">*</text>
+                <text>起租面积</text>
+            </view>
+            <view class="right">
+                <view class="input">
+                    <input class="inputs" placeholder="请填写" placeholderClass="inputPlace" type="number" name="start_area"></input>
+                </view>
+                <view class="unit">㎡</view>
+            </view>
+        </view>
+        <view class="one">
+            <view class="left">
+                <text class="star">*</text>
+                <text>可租面积</text>
+            </view>
+            <view class="right">
+                <view class="input">
+                    <input class="inputs" placeholder="请填写" placeholderClass="inputPlace" type="number" name="available_area"></input>
+                </view>
+                <view class="unit">㎡</view>
+            </view>
+        </view>
+        <view class="one">
+            <view class="left">
+                <text class="star">*</text>
+                <text>总面积</text>
+            </view>
+            <view class="right">
+                <view class="input">
+                    <input class="inputs" placeholder="请填写" placeholderClass="inputPlace" type="number" name="total_area"></input>
+                </view>
+                <view class="unit">㎡</view>
+            </view>
+        </view>
+        <view class="one">
+            <view class="left">
+                <text class="star">*</text>
+                <text>存储类型</text>
+            </view>
+            <picker bindchange="bindPickerStorageTypes" mode="selector" value="{{storageTypesIndex}}" range="{{storageTypesArr}}" range-key="sts">
+                <view class="picker">
+                    {{storageTypesArr[storageTypesIndex].sts}}
+                </view>
+            </picker>
+            <image class="jian" src="../../images/6@3x.png"></image>
+            <!-- <input class="inputs" placeholder="请填写" placeholderClass="inputPlace" type="text" name="storage_types"></input> -->
+        </view>
+        <view class="one">
+            <view class="left">
+                <text class="star">*</text>
+                <text>服务方式</text>
+            </view>
+            <picker bindchange="bindPickerServiceTypes" mode="selector" value="{{serviceTypesIndex}}" range="{{serviceTypesArr}}" range-key="serts">
+                <view class="picker">
+                    {{serviceTypesArr[serviceTypesIndex].serts}}
+                </view>
+            </picker>
+            <image class="jian" src="../../images/6@3x.png"></image>
+            <!-- <input class="inputs" placeholder="请填写" placeholderClass="inputPlace" type="text" name="service_types"></input> -->
+        </view>
+        <view class="imgs" style="border-bottom: 1rpx solid #ededed;">
+            <!-- <view class="top">
+                <text class="star">*</text> 库房实景照片（默认第一张为封面，可点击切换）
+            </view> -->
+            <view class="content">
+                <!-- <view class="item" wx:for="{{scenePictures}}" wx:key="index">
+                    <image bindtap="delet" class="delet" data-index="{{index}}" data-type="1" mode="aspectFit" src="../../images/59@3x.png"></image>
+                    <image bindtap="clickImage" class="photo" data-index="{{index}}" mode="aspectFill" src="{{item}}"></image>
+                </view>
+                <view bindtap="chooseImg" class="item" data-type="1" wx:if="{{scenePictures.length<8}}">
+                    <image class="photo" mode="aspectFit" src="../../images/58@3x.png"></image>
+                    <text>({{scenePictures.length}}/8)</text>
+                </view> -->
+            </view>
+        </view>
+    </view>
+    <!-- <block wx:for="{{body.warehouse_attribution_categories}}" wx:key="index">
+        <view class="title" wx:if="{{item.name!='仓库简介'}}">{{item.name}}</view>
+        <view style="height:25rpx;" wx:else></view>
+        <view class="contentContainer" wx:if="{{item.warehouse_attributions[0].choose_type!=4}}">
+            <view class="one" wx:for="{{item.warehouse_attributions}}" wx:for-index="idx" wx:for-item="attributions" wx:key="{{idx}}">
+                <view class="left">
+                    <text class="star" wx:if="{{attributions.required==1}}">*</text>
+                    <text>{{attributions.name}}</text>
+                </view>
+                <view bindtap="toSelect" class="right" data-idx="{{idx}}" data-index="{{index}}" wx:if="{{attributions.options.length>2&&attributions.name!='建造年代'||attributions.choose_type==2}}">
+                    <view class="text">
+                        <text wx:if="{{opItem.checked||opItem.id==attributions.value}}" wx:for="{{attributions.options}}" wx:for-index="opIdx" wx:for-item="opItem" wx:key="{{opIdx}}"> {{opItem.value}}</text>
+                        <text style="color: #C7CDD3;" wx:if="{{!attributions.value}}">请选择</text>
+                    </view>
+                    <image class="jian" mode="aspectFit" src="../../images/6@3x.png"></image>
+                </view>
+                <view class="right" wx:if="{{attributions.options.length==2&&attributions.choose_type==1}}">
+                    <view bindtap="rightSwich" class="pick" data-idx="{{idx}}" data-index="{{index}}" data-pickidx="{{pickIdx}}" wx:for="{{attributions.options}}" wx:for-index="pickIdx" wx:for-item="pickItem" wx:key="{{pickIdx}}">
+                        <image mode="aspectFit" src="../../images/33@3x.png" wx:if="{{pickItem.checked||pickItem.id==attributions.value}}"></image>
+                        <image mode="aspectFit" src="../../images/34@3x.png" wx:else></image>
+                        <text>{{pickItem.value}}</text>
+                    </view>
+                </view>
+                <view bindtap="chooseBuildDay" class="right" wx:if="{{attributions.name=='建造年代'}}">
+                    <view class="text">
+                        <text wx:if="{{opItem.checked}}" wx:for="{{attributions.options}}" wx:for-index="opIdx" wx:for-item="opItem" wx:key="{{opIdx}}"> {{opItem.value}}</text>
+                        <text style="color: #C7CDD3;" wx:if="{{!attributions.value}}">请选择</text>
+                    </view>
+                    <image class="jian" mode="aspectFit" src="../../images/6@3x.png"></image>
+                </view>
+                <view class="right" wx:if="{{attributions.choose_type==3}}">
+                    <view class="input">
+                        <view class="input-p {{attributions.value?'':'p'}}" wx:if="{{showAddress||showDatePop||showDatePops}}">{{attributions.value?attributions.value:'请填写'}}</view>
+                        <input bindinput="rightInput" data-idx="{{idx}}" data-index="{{index}}" placeholder="请填写" placeholderClass="p" type="number" value="{{attributions.value}}" wx:else></input>
+                    </view>
+                    <view class="unit" wx:if="{{attributions.unit}}">{{attributions.unit=='米'?'m':attributions.unit}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="contentContainer" wx:else>
+            <view class="desc" style="height: 260rpx;">
+                <view class="top">仓库描述</view>
+                <textarea bindinput="descInput" data-index="{{index}}" maxlength="-1" placeholder="请输入仓库描述" placeholderStyle="color:#C7CDD3" style="width: 100%;height: 160rpx;" value="{{body.warehouse_attribution_categories[index].warehouse_attributions[0].value}}"></textarea>
+            </view>
+        </view>
+    </block> -->
+    <view style="height:195rpx;"></view>
+        <view class="btn">
+            <button class="btns" form-type="submit">立即发布</button>
+        </view>
+    </form>
+</view>
+<city-picker bindcancel="clearAddressModel" bindconfirm="confirmAress" value="{{address.value}}" wx:if="{{showAddress}}"></city-picker>
+<date-picker bindcancel="cancelDate" bindconfirm="confirmBuildDate" justYear="{{true}}" yearOptions="{{years}}" wx:if="{{showDatePop}}"></date-picker>
+<!-- <canvas canvasId="photo_canvas" style="width:{{canvas_w}}px;height:{{canvas_h}}px;position: absolute;left:-1500px;top:-1500px;"></canvas> -->
+

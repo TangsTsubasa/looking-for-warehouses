@@ -1,0 +1,96 @@
+<view class="container">
+    <view class="card">
+        <view class="custorm">
+            <view class="custorm-img" wx:if="{{status==3}}">
+                <image mode="aspectFit" src="../../images/40@3x.png"></image>
+            </view>
+            <view class="custorm-img" wx:elif="{{status==0||status==1||status==2}}">
+                <image mode="aspectFit" src="../../images/company_auth.png"></image>
+            </view>
+            <view class="login" bindtap="record">{{userName}}</view>
+        </view>
+        <view class="auth" wx:if="{{status==0}}">
+            <image src="/images/wait.png" class="authicon"></image>
+            <text class="anthstatus" style="color:#fff">待审核</text>
+        </view>
+        <view class="auth" wx:elif="{{status==1}}">
+            <image src="/images/authed.png" class="authicon"></image>
+            <text class="anthstatus" style="color:#ffa861">已认证</text>
+        </view>
+        <view class="auth" wx:elif="{{status==3}}">
+            <image src="/images/unauth.png" class="authicon"></image>
+            <text class="anthstatus" style="color:#818EA1">未认证</text>
+        </view>
+        <view class="auth" wx:elif="{{status==2}}">
+            <image src="/images/unauth.png" class="authicon"></image>
+            <text class="anthstatus" style="color:#818EA1">审核未通过</text>
+        </view>
+    </view>
+    <view class="centerContainer">
+        <view class="topContainers">
+            <view class="icon" bindtap="toWanted">
+                <image mode="aspectFit" src="../../images/42@3x.png"></image>
+                <view class="iconName">委托找仓</view>
+            </view>
+            <view class="icon" bindtap="toWareManage">
+                <image mode="aspectFit" src="../../images/80@3x.png"></image>
+                <view class="iconName">仓库管理</view>
+            </view>
+             <view class="icon" bindtap="toCollection">
+                <image mode="aspectFit" src="../../images/43@3x.png"></image>
+                <view class="iconName">仓库收藏</view>
+            </view>
+            <view class="icon" bindtap="toOrderManage">
+                <image mode="aspectFit" src="../../images/44@3x.png"></image>
+                <view class="iconName">订单管理</view>
+            </view>
+            <view bindtap="gotoAuth" class="icon">
+                <image mode="aspectFit" src="../../images/46@3x.png"></image>
+                <view  class="iconName">租赁认证</view>
+            </view>
+            <view bindtap="gotoAuth01" class="icon">
+                <image mode="aspectFit" src="../../images/41@3x.png"></image>
+                <view class="iconName">出租认证</view>
+            </view>
+        </view>
+      
+        <view class="topContainers" style="margin-top: 30rpx;height:300rpx;">
+            <view  class="listContainer">
+                <view class="oneContainer">
+                    <image class="iconStyle" mode="aspectFit" src="../../images/47@3x.png"></image>
+                    <text>联系客服</text>
+                </view>
+                <view class="oneContainer">
+                    <view class="tel">
+                        <view class="telephone">400-800-666</view>
+                        <view class="workTime">(工作时间 09:00~18:00)</view>
+                    </view>
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+            <view bindtap="jumpFeedBack" class="listContainer">
+                <view class="oneContainer">
+                    <image  class="iconStyle" mode="aspectFit" src="../../images/48@3x.png"></image>
+                    <text>意见与反馈</text>
+                </view>
+                <view class="oneContainer">
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+            <view  class="listContainer">
+                <view class="oneContainer">
+                    <image class="iconStyle" mode="aspectFit" src="../../images/49@3x.png"></image>
+                    <text>关于我们</text>
+                </view>
+                <view class="oneContainer">
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>        
+        </view>     
+    </view>
+    <view wx:if="{{status!=3}}">
+        <button class="exit" bindtap="exit">退出登录</button>
+    </view>
+</view>
+
+

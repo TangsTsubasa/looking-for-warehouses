@@ -1,0 +1,5 @@
+/* pages/common/map/map.wxss */
+.t1{
+  color: #C7CDD3;
+  font-size: 30rpx;
+}

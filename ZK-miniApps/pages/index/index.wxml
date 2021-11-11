@@ -1,0 +1,95 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="banner">
+    <swiper circular="true" indicator-dots="true" autoplay="true" interval="5000" duration="500">
+      <block wx:for="{{swiperImg}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    
+  </view>
+  <view class="message">
+    <view class="notice">
+      <image class="good" src="/images/notice.png"></image>
+      <text class="noti" decode="{{true}}">&nbsp;&nbsp;冷库的要求</text>
+      <view class="line"></view>
+      <view class="modle1">
+        <view class="nleft">
+          <image src="/images/1.png"></image>
+          <text class="t1">合作</text>
+        </view>
+        <view class="ncenter">
+          <image src="/images/2.png"></image>
+          <text class="t1">管理</text>
+        </view>
+        <view class="nright">
+          <image src="/images/3.png"></image>
+          <text class="t1">冷库</text>
+        </view>
+      </view> 
+    </view>
+    <view class="notice">
+      <view class="oleft">
+        <view><text>仓库招租不求人</text></view>
+        <view><text>快速招租，无缝对接客户</text></view>
+      </view>
+      <button id="btn" bindtap="toIdentity">快速认证</button>
+      <view class="line"></view>
+      <view class="modle2">
+        <view class="tleft" bindtap="toPublishWareHouse">
+        <image src="/images/publish.png" style="width:142px;height:105px;border-radius:20rpx"></image>
+        </view>
+        <view class="tright" bindtap="toPublishWanted">
+          <image src="/images/publish1.png" style="width:142px;height:105px;border-radius:20rpx"></image>
+        </view>
+      </view> 
+      <view class="cooperate">
+        <image id="pic" src="/images/4@2x.png"></image>
+      </view>
+    </view>
+    <view class="notice">
+      <image class="good" src="/images/good.png"></image>
+      <text class="noti" decode="{{true}}">&nbsp;&nbsp;仓库推荐</text>
+      <view class="noti2" bindtap="toSwitch">
+        {{cityName}}
+        <image class="chcity" src="/images/tos.png"></image>
+      </view>
+      <view class="line"></view>
+      <block wx:for="{{wareHouseList}}" wx:if="{{index<5}}" wx:item="wareHouse" wx:key="this">
+      <view class="need" bindtap="toDetail" data-id="{{item.wid}}">
+        <image src="/images/item.png" class="good" style="margin-right:10rpx;"></image>
+        <text class="noti">编号：{{item.wid}}</text>
+        <view class="detail">
+          <text class="n1">公司： {{item.company_name}}</text>
+        </view>
+        <view class="detail">
+          <text class="n1">仓库： {{item.ware_name}}</text>
+          <text class="n2">面积： {{item.total_area}}m²</text>
+        </view>
+        <view class="detail">
+          <text class="n1">单价： {{item.price}}元/m²天</text>
+          <text class="n2">区域： {{item.province_name}}-{{item.city_name}}</text>
+        </view>
+        <view class="detail">
+          <text class="n1">服务方式： {{item.service_types}}</text>
+        </view>
+        <view class="line"></view>
+      </view>
+    </block>
+    <view bindtap="toMore" class="toMore">
+      查看更多
+    </view>
+    </view>
+
+      <view class="notice">
+      <image class="good" src="/images/good.png"></image>
+      <text class="noti" decode="{{true}}">&nbsp;&nbsp;企业服务与展示</text>
+      <text class="noti2" decode="{{true}}">查看更多 &nbsp;&nbsp;></text>
+      <view class="line"></view>
+        <text decode="{{true}}">&emsp;&emsp;找库网专注于冷链仓储，与众多合作伙伴一起，推出以冷库租赁、冷库出租等服务，为您基于互联网平台实现...</text>
+      </view>
+  </view>
+  
+</view>

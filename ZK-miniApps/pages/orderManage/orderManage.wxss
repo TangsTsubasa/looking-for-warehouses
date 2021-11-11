@@ -1,0 +1,2 @@
+/* pages/orderManage/orderManage.wxss */
+@import"../order/order.wxss";

@@ -1,0 +1,165 @@
+<view class="container">
+    <image class="topImage" mode="aspectFit" src="../../images/9@2x.png"></image>
+    <view class="wContainer">
+        <form bindsubmit="addWantedMarket">
+        <view class="oneContainer">
+            <view class="one">
+                <view class="left">
+                    <text class="star">*</text>
+                    <text>面积</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" maxlength="9" placeholder="面积需求" placeholderClass="inputPlace" type="number" name="area"></input>
+                    <view>㎡</view>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text class="star">*</text>
+                    <text>省、市、区</text>
+                </view>
+                <view class="right">
+                    <!-- <input class="inputs" placeholder="请输入省、市、区" placeholderClass="inputPlace" style="width: 60%;" type="text" name="province_name"></input> -->
+                    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                    <view class="picker">
+                    {{region[0]}},{{region[1]}},{{region[2]}}
+                    </view>
+                    </picker>
+                    <image class="jian" src="../../images/6@3x.png"></image> 
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text>单价</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="请填写" placeholderClass="inputPlace" style="width: 60%;" type="digit" name="price"></input>
+                    <view>元/㎡·天</view>
+                </view>
+            </view>
+            <form bindsubmit="add" report-submit>
+            <view class="one">
+                <view class="left">
+                    <text>存储类型</text>
+                </view>
+                <view class="right">
+                    <picker bindchange="bindPickerStoreType" mode="selector" value="{{storeTypeIndex}}" range="{{storeTypeArr}}" range-key="st">
+                    <view class="picker">
+                    {{storeTypeArr[storeTypeIndex].st}}
+                    </view>
+                    </picker>
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+            </form>
+            <view class="one" style="border-bottom: none;">
+                <view class="left">
+                    <text>货物类型</text>
+                </view>
+                <view class="right" style="border-bottom: none;">
+                    <!-- <input class="inputs" maxlength="9" placeholder="请输入货物类型" placeholderClass="inputPlace" type="text" name="goods_type"></input> -->
+                    <picker bindchange="bindPickerGoodsType" mode="selector" value="{{goodsTypeIndex}}" range="{{goodsTypeArr}}" range-key="gt">
+                    <view class="picker">
+                    {{goodsTypeArr[goodsTypeIndex].gt}}
+                    </view>
+                    </picker>
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="oneContainer">
+            <view class="one">
+                <view class="left">
+                    <text class="star">*</text>
+                    <text>联系人</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="请输入联系人姓名" placeholderClass="inputPlace" style="margin-right: 0;" type="text" name="contact"></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text class="star">*</text>
+                    <text>手机号</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" maxlength="11" placeholder="请输入联系人手机号" placeholderClass="inputPlace" style="margin-right: 0;" type="number" name="mobile"></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text>邮箱</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="请输入联系人邮箱" placeholderClass="inputPlace" style="margin-right: 0;" type="text" name="email"></input>
+                </view>
+            </view>
+            <view class="one" style="border-bottom: none;">
+                <view class="left">
+                    <text>公司</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="请输入公司名称" placeholderClass="inputPlace" style="margin-right: 0;width: 530rpx;" type="text" name="company"></input>
+                </view>
+            </view>
+        </view>
+        <view class="oneContainer">
+            <view class="one">
+                <view class="left">
+                    <text>租赁年限</text>
+                </view>
+                <view class="right">
+                    <!-- <input class="inputs" placeholder="请输入租赁年限" placeholderClass="inputPlace" style="margin-right: 0;" type="text" name="lease_period"></input> -->
+                    <picker bindchange="bindPickerPeriod" mode="selector" value="{{periodIndex}}" range="{{periodArr}}" range-key="lp">
+                    <view class="picker">
+                    {{periodArr[periodIndex].lp}}
+                    </view>
+                    </picker>
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text>启用日期</text>
+                </view>
+                <view class="right">
+                    <!-- <input class="inputs" maxlength="9" placeholder="请输入启用日期" placeholderClass="inputPlace" type="text" name="start_date"></input> -->
+                    <picker mode="date" value="{{start_date}}" start="2020-01-01" end="2030-01-01" bindchange="bindDateChange">
+                        <view class="picker">
+                        {{start_date}}
+                        </view>
+                    </picker>
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text>服务方式</text>
+                </view>
+                <view class="right">
+                    <!-- <input class="inputs" maxlength="9" placeholder="请输入服务方式" placeholderClass="inputPlace" type="text" name="service_type"></input> -->
+                    <picker bindchange="bindPickerServiceType" mode="selector" value="{{serviceTypeIndex}}" range="{{serviceTypeArr}}" range-key="sert">
+                    <view class="picker">
+                    {{serviceTypeArr[serviceTypeIndex].sert}}
+                    </view>
+                    </picker>
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+            <view class="one" style="border-bottom: none;">
+                <view class="left">
+                    <text>备注</text>
+                </view>
+                <view class="right">
+                    <input class="inputs" placeholder="其他说明" placeholderClass="inputPlace" style="margin-right: 0;" type="text" name="remark"></input>
+                </view>
+            </view>
+        </view>
+        <view class="btn">
+            <button class="btns" form-type="submit">立即发布</button>
+        </view>
+        </form>
+    </view>
+</view>
+<province-picker bindcancel="clearAddressModel" bindconfirm="confirmAress" value="{{address.value}}" wx:if="{{showAddress}}"></province-picker>
+<date-picker bindcancel="cancelDate" bindconfirm="confirmStartDate" wx:if="{{showDatePop}}"></date-picker>

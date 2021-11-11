@@ -1,0 +1,218 @@
+/* pages/mine/mine.wxss */
+/* .container {
+ 
+} */
+.auth{
+  margin-top: 20rpx;
+  padding: 20rpx;
+  display: flex;
+}
+.authicon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  flex: 1;
+}
+.anthstatus{
+  flex: 10;
+}
+.topContainer {
+  height: 64rpx;
+  background-color: #E9EDF5;
+  line-height: 64rpx;
+  display: flex;
+  align-items: center;
+}
+
+.topContainer image {
+  width: 30rpx;
+  height: 27rpx;
+  margin: 0 25rpx 0 30rpx;
+}
+
+.topContainer view {
+  font-size: 24rpx;
+  color: #2D323C;
+}
+
+.card {
+  width: calc(100% - 60rpx);
+  position: relative;
+  padding: 34rpx 30rpx;
+  background-color: #FFF;
+}
+
+.custorm {
+  display: flex;
+  align-items: center;
+}
+
+.custorm-img {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50rpx;
+  padding: 0 30rpx;
+  padding-left: 0;
+}
+
+.custorm-img image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+
+.custorm-info {
+  width: 480rpx;
+}
+
+.custorm-info .my-info {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  display: flex;
+}
+
+.custorinfo-name {
+  color: #222;
+  font-size: 54rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.custorinfo-name text {
+  width: 410rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custorinfo-tip {
+  padding: 5rpx 20rpx;
+  height: 40rpx;
+  border-radius: 100rpx;
+  font-size: 22rpx;
+  background-color: #f2f2f2;
+  color: #2E323D;
+  margin-right: 15rpx;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.custorinfo-tip image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.right image {
+  width: 19rpx;
+  height: 22rpx;
+}
+
+/* .centerContainer {
+  padding: 24rpx;
+} */
+
+.topContainers {
+  width: 100%;
+  height: 315rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.topContainers .icon {
+  display: inline-block;
+  width: 25%;
+  height: 110rpx;
+  text-align: center;
+  padding-top: 40rpx;
+}
+
+.icon image {
+  width: 52rpx;
+  height: 52rpx;
+}
+
+.icon .iconName {
+  font-size: 24rpx;
+  color: #2E323D;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #F1F1F1;
+  padding: 0 30rpx;
+}
+
+.listContainer:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+.oneContainer {
+  display: flex;
+  align-items: center;
+}
+
+.oneContainer .iconStyle {
+  width: 39rpx;
+  height: 39rpx;
+  margin-right: 20rpx;
+}
+
+.jian {
+  width: 15rpx;
+  height: 20rpx;
+}
+
+.tel {
+  margin-right: 30rpx;
+  text-align: right;
+}
+
+.telephone {
+  color: #ffa861;
+  font-size: 26rpx;
+}
+
+.workTime {
+  color: #818EA1;
+  font-size: 20rpx;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 50rpx;
+}
+
+.btns {
+  width: 380rpx;
+  height: 80rpx;
+  color: #fff;
+  background-color: #ffa861;
+  border-radius: 60rpx;
+  font-size: 32rpx;
+}
+
+.login {
+  color: #818EA1;
+  font-size: 54rpx;
+  font-weight: 600;
+}
+.exit{
+  width: 380rpx;
+  height: 80rpx;
+  color: rgb(212, 31, 31);
+  background-color: #fff;
+  border-radius: 60rpx;
+  border: 2rpx solid rgb(212, 31, 31);
+  font-size: 32rpx;
+  margin-top: 30rpx;
+}

@@ -1,0 +1,239 @@
+.bg{
+  background-color: #fafafa;
+  padding-top:100rpx;
+}
+.backbw{
+  margin: 2% 4% 30rpx 4%;
+  font-size: 30rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius:20rpx !important;
+  padding: 30rpx;
+  /* display: flex; */
+}
+.backbw1{
+  margin: 2% 4% 2% 4%;
+  font-size: 30rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius:20rpx !important;
+  padding: 30rpx 30rpx 80rpx 30rpx;
+}
+.pic2{
+  width: 15rpx;
+  height: 25rpx;
+}
+.pic3{
+  width: 50rpx;
+  height: 50rpx;
+}
+.pic4{
+  width: 220rpx;
+  height: 200rpx;
+  flex: 1;
+}
+.content{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.mess{
+  flex:2;
+  margin-left: 30rpx;
+}
+.ite{
+  display: flex;
+}
+.i1{
+  font-size: 35rpx;
+  font-weight: 550;
+  margin-bottom: 15rpx;
+  flex: 3;
+}
+.i2{
+  font-size: 30rpx;
+  font-weight: 400;
+  margin-bottom: 15rpx;
+  flex: 1;
+  text-align: right;
+}
+.i3{
+  font-size: 30rpx;
+  font-weight: 400;
+  margin-bottom: 15rpx;
+}
+.i4{
+  margin-left: 40%;
+  font-size: 30rpx;
+  font-weight: 500;
+  margin-bottom: 15rpx;
+  text-align: right;
+}
+.c1{
+  width: 100%;
+  display: flex;
+  margin-bottom: 30rpx;
+  margin-right: 0;
+}
+.logo{
+  flex: 1;
+}
+.cname{
+  width: 100%;
+  font-size: 38rpx;
+  flex: 6;
+  font-weight: 600;
+}
+.jian{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+.line{
+  border-bottom: 1rpx solid #fafafa;
+  margin-bottom: 30rpx;
+}
+.btn1{
+  display: inline-block;
+  background: white;
+  border: 1px solid #dedede;
+  border-radius: 66rpx;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  color: #666;
+  padding: 0rpx 30rpx;
+  box-sizing: border-box;
+  height: 50rpx;
+  line-height: 45rpx;
+  margin-top: 20rpx;
+  flex: 1;
+}
+
+
+/* tab切换 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.navbar-box {
+  height: 70rpx;
+  line-height: 70rpx;
+  position: fixed;
+  top: 0rpx;
+  background: white
+}
+
+.nav-item {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+
+.nav-item text {
+  padding-bottom: 10rpx;
+}
+
+.active {
+  color: #a53533;
+  border-bottom: 10rpx solid #a53533;
+  box-sizing: border-box;
+}
+
+.menu {
+  font-size: 28rpx;
+  width: 100%;
+  /* overflow-x: scroll; */
+  border-bottom: 20rpx solid #f2f2f2;
+  padding: 30rpx 30rpx 0rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0rpx;
+  z-index: 999;
+  background: white;
+}
+
+.chooseNav {
+  padding-bottom: 10rpx;
+}
+
+.listBox {
+  padding: 30rpx;
+  width: calc(100% - 60rpx);
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+} 
+
+.listTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.goodsImg {
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+}
+
+.infor {
+  flex: 1;
+  margin-top: 80rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.infor view {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infor view:nth-of-type(2) {
+  font-size: 24rpx;
+}
+
+.name, .choose {
+  font-weight: 600;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 320rpx;
+}
+
+.price, .number {
+  padding: 5rpx 10rpx;
+  box-sizing: border-box;
+}
+
+.listBottom {
+  text-align: right;
+}
+
+button::after {
+  border: none;
+}
+
+.status button {
+  display: inline-block;
+  background: white;
+  border: 1px solid #dedede;
+  border-radius: 66rpx;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  color: #666;
+  padding: 0rpx 30rpx;
+  box-sizing: border-box;
+  height: 50rpx;
+  line-height: 45rpx;
+  margin-top: 20rpx;
+}
+.unlogin{
+  width: 80%;
+  height: 180px;
+  margin-left: 10%;
+}

@@ -1,0 +1,14 @@
+@import"../login/login.wxss";
+.role{
+  padding-left: 22rpx;
+  flex: 2;
+  color: #545454; 
+  font-size: 14px;
+}
+
+.picker{
+  margin-right: 52rpx;
+  flex:1;
+  color: #545454; 
+  font-size: 14px;
+}

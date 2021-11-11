@@ -1,0 +1,38 @@
+<view class="bg">
+  <view class="ct">请选择您的仓库:</view>
+  <block wx:for="{{warehouseList}}" wx:item="{{warehouse}}" wx:key="this">
+    <block wx:for="{{item.wareHouses}}" wx:item="{{warehouse}}" wx:key="this">
+      <view class="list">
+        <view class="left">
+          <image class="pic2" mode="aspectFill" src="../../images/53-1.png"></image>
+        </view>
+        <view class="right" bindtap="toDetail" data-id="{{item.wid}}">
+          <view class="name">
+            {{item.company_name}}
+          </view>
+          <view class="address">
+            <image class="pic1" mode="aspectFit" src="../../images/7@3x.png"></image>
+            <text>{{item.province_name}}-</text>
+            <text>{{item.city_name}}</text> - {{item.district_name}}
+          </view>
+          <view class="area">
+            可租：{{item.available_area}}㎡ |
+            总面积: {{item.total_area}}㎡
+          </view>
+          <view class="price">
+            <view>￥{{item.price}} 起(元/㎡·天)</view>
+          </view>
+          <view class="storage_types">
+            <view>仓库类型: {{item.storage_types}}</view>
+          </view>
+          <button id="btn0" bindtap="modalinput" data-wid="{{item.wid}}">选择报价</button>
+        </view>
+      </view>
+      <modal hidden="{{hiddenmodalput}}" title="给出报价" 
+   			confirm-text="提交" cancel-text="取消" bindcancel="modalinput" 
+   			bindconfirm="confirm">
+        <input type='text' bindinput='setValue' placeholder="请输入单价 *单位：元/㎡·天" auto-focus />
+      </modal>
+    </block>
+  </block>
+</view>

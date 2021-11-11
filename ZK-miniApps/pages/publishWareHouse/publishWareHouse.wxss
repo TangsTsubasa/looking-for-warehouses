@@ -1,0 +1,273 @@
+/* pages/publishWareHouse/publishWareHouse.wxss */
+.container{
+  padding-top: 50rpx;
+}
+.title {
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #ffa861;
+  padding-left: 30rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.contentContainer {
+  background-color: #fff;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  color: #2d323c;
+}
+
+.one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ededed;
+}
+
+.contentContainer .one:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 145rpx;
+}
+
+.contact-info {
+  width: 600rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact image {
+  width: 29rpx;
+  height: 29rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.contact view:last-child {
+  width: 100%;
+  position: relative;
+}
+
+.left {
+  display: flex;
+}
+
+.container .star {
+  color: #ff500b;
+}
+
+.one .right {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30rpx;
+  position: relative;
+}
+
+.one .right .text {
+  width: 460rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.jian {
+  width: 15rpx;
+  height: 20rpx;
+  margin-left: 30rpx;
+}
+
+.one .right .pick {
+  display: flex;
+  align-items: center;
+}
+
+.one .right .pick image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 18rpx;
+  margin-left: 87rpx;
+}
+
+.one .right .input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.one .right .input input {
+  color: #2d323c;
+}
+
+.one .right .input .input-p {
+  width: 460rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.one .right .input input {
+  text-align: right;
+  width: 100%;
+}
+
+.one .right .input textarea {
+  text-align: right;
+  width: 100%;
+}
+
+.one .right .unit {
+  display: flex;
+  align-items: center;
+  margin-left: 28rpx;
+}
+
+.add-contact {
+  height: 120rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-contact .btn {
+  width: 380rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #ffa861;
+  border-radius: 100rpx;
+  font-size: 30rpx;
+  color: #ffa861;
+}
+
+.imgs .top {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.imgs .content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 30rpx;
+}
+
+.imgs .content .item {
+  width: 149rpx;
+  height: 149rpx;
+  position: relative;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-right: 30rpx;
+}
+
+.imgs .content .item .photo {
+  width: 100%;
+  height: 100%;
+}
+
+.imgs .content .item .delet {
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  top: -13rpx;
+  right: -13rpx;
+}
+
+.imgs .content .item text {
+  color: #989fac;
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 14rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.desc {
+  padding-right: 30rpx;
+}
+
+.desc .top {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.textarea-p {
+  width: 100%;
+}
+
+.desc .textarea textarea {
+  width: 100%;
+  height: 180rpx;
+}
+
+.bottom {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #ffa861;
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+}
+
+.oneBtn {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 100rpx;
+}
+
+.bottom .other {
+  background-color: #ffa861;
+}
+
+.inputs {
+  display: inline-block;
+  text-align: right;
+  color: #2D323C;
+}
+.inputPlace {
+  color: #C7CDD3;
+}
+.btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 50rpx;
+}
+
+.btns {
+  width: 600rpx;
+  height: 80rpx;
+  color: #fff;
+  background-color: #ffa861;
+  border-radius: 60rpx;
+  font-size: 32rpx;
+}
+
+.in{
+  text-align: right;
+  color: #C7CDD3;
+}

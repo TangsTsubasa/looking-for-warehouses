@@ -1,0 +1,30 @@
+<!--pages/wantedSuccess/wantedSuccess.wxml-->
+<view class="container">
+    <view class="contents">
+        <view class="successTitle">
+            <image mode="aspectFit" src="../../images/success.png"></image>
+            <text class="successContent">发布求租需求成功</text>
+        </view>
+        <view class="wait">请等待平台与您联系</view>
+        <view class="btn1Container">
+            <view bindtap="toWantedManagement" class="btn1">查看求租记录</view>
+        </view>
+        <view class="btn2Container">
+            <button bindtap="toHome" class="btn2">返回首页</button>
+        </view>
+        <!-- <view class="btn2Container">
+            <button bindtap="getWantedShare" class="btn2">分享微信好友或朋友圈</button>
+        </view> -->
+    </view>
+    <good-warehouse id="goodWarehouse"></good-warehouse>
+</view>
+<view bindtap="closeShare" catchtouchmove="return" class="shareContainer" wx:if="{{isShare}}">
+    <view catchtap="lookImg" class="shareImg">
+        <image src="{{shareImg}}"></image>
+    </view>
+    <view catchtap="share" class="shareBtn">
+        <image src="../../images/share.png"></image>
+        <text>分享好友或朋友圈</text>
+    </view>
+</view>
+

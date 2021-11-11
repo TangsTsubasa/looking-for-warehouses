@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+    "usingComponents": {
+        
+    },
+    "navigationBarTitleText": "反馈"
+}

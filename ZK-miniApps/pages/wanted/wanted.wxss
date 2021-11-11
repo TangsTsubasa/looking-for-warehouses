@@ -1,0 +1,77 @@
+/* pages/wanted/wanted.wxss */
+.bg{
+  background-color: #fafafa;
+  height: 100vh;
+  padding-top: 20rpx;
+}
+.btn{
+  display: flex;
+}
+.title{
+  margin-left: 20rpx;
+  flex: 2;
+  font-weight: 550;
+  font-size: 40rpx;
+}
+#btnpublish{
+  flex: 1;
+  width: 250rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  background-color:#ffa861;
+  border-radius: 20rpx;
+  color: #f0f0f0;
+  padding-top: 10rpx;
+  margin-right: 20rpx;
+}
+.list{
+  margin-top: 20rpx;
+}
+.need{
+  margin: 10rpx 2% 0 2%;
+  font-size: 30rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius:20rpx !important;
+  padding: 20rpx;
+}
+.detail{
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+.noti{
+  display: inline-block;
+  vertical-align: middle;
+}
+.noti2{
+  float: right;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+.n1{
+  width: 50%;
+}
+.n2{
+  width: 50%;
+  float: right;
+}
+.btn1{
+  margin: 20rpx 0 20rpx 240rpx;
+  display: flex;
+}
+.btni{
+  width: 250rpx;
+  font-size: 30rpx;
+  background-color:#ffa861;
+  border-radius:100rpx;
+  color: #fff;
+  flex: 1;
+}
+.line{
+  margin: 20rpx 0;
+  border-top:1px #f5f5f5 solid;
+}
+.unlogin{
+  width: 80%;
+  height: 180px;
+  margin-left: 10%;
+}

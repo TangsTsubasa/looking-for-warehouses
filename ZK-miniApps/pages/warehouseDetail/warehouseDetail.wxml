@@ -1,0 +1,218 @@
+<!--pages/warehouseDetail/warehouseDetail.wxml-->
+<view>
+    <view class="ware-detail">
+        <view class="banner">
+            <swiper autoplay="{{true}}" circular="{{true}}" class="swipers" indicator-dots="{{indicatorDots}}">
+                <block>
+                    <swiper-item>
+                    <image class="slide-image" src="../../images/wd.jpg"></image>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="summary">
+            <view class="titleContainer">
+                <view class="title">
+                <!-- 编号：{{wid}} -->
+                   {{wareHouseInfo.company_name}}-{{wareHouseInfo.ware_name}}
+                </view>
+                <view class="share">
+                    <button open-type="share" class="sharebtn" size="mini">
+                        <image mode="aspectFit" src="../../images/69@3x.png" class="shimg"></image>
+                        <view style="font-size: 22rpx;">分享</view>
+                    </button>
+                </view>
+            </view>
+            <view class="price">
+                <view wx:if="{{offer_price==null}}">
+                    <view class="left">￥{{wareHouseInfo.price}}</view>
+                </view>
+                <view wx:elif="{{offer_price!=null}}" style="display:flex;">
+                    <view class="left">￥{{offer_price}}</view>
+                    <view class="oldprice">￥{{wareHouseInfo.price}}</view>
+                </view>
+                <view style="flex:5">起(元/㎡·天)</view>
+                <view class="right" style="{{warehouseDetail.authenticated==0?'color:#818EA1;border:0.5px solid #818EA1;':''}}">
+                </view>
+            </view>
+        </view>
+        <view style="height:25rpx;"></view>
+        <view class="choose" bindtap="showCart">
+            <text class="le">{{choose}}</text>
+            <image class="jian" src="../../images/6@3x.png"></image>
+        </view>
+        <!--遮罩-->
+        <view class='mask' hidden='{{mask}}' catchtap='hideAllBox'></view>
+        <!--购物车弹窗-->
+        <view class='lay-box detail-cart {{!cartBox ? "on" : ""}}'>
+            <view class='box-cart-title'>
+                <image src="../../images/wd.jpg" class="box-img"></image>
+                <view class='price-box'>
+                    <!--可租面积-->
+                    <view class='price'>￥{{wareHouseInfo.price}}</view>
+                    <view class="sales">( 可租面积{{wareHouseInfo.available_area}}㎡ )</view>
+                    <!--右上角关闭按钮-->
+                    <text class='lay-close' bindtap='showCart'>×</text>
+                </view>
+            </view>
+            <scroll-view scroll-y class='box-content'>
+                <!--选择数量-->
+                <view class='updown-box jus-b ali-c'>
+                    <view class='cor-grey'>租赁面积：1000 ㎡(起租,*每份为1000 ㎡)</view>
+                    <!--数量加减按钮-->
+                    <view class='updown flexc'>
+                        <!--减-->
+                        <view class='down' hover-class='button-hover' bindtap='areduceNumber'>
+                            <text>-</text>
+                        </view>
+                        <!--输入框-->
+                        <input type='number' class='nums' value='{{areaNumber}}' bindinput="inputAreaChange"></input>
+                        <!--加-->
+                        <view class='up' hover-class='button-hover' bindtap='aaddNumber'>
+                            <text>+</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- 时长选择 -->
+                <view class='updown-box jus-b ali-c'>
+                    <view class='cor-grey'>租赁时长：一个月(起租,*每份为一个月)</view>
+                    <!--数量加减按钮-->
+                    <view class='updown flexc'>
+                        <!--减-->
+                        <view class='down' hover-class='button-hover' bindtap='reduceNumber'>
+                            <text>-</text>
+                        </view>
+                        <!--输入框-->
+                        <input type='number' class='nums' value='{{goodsNumber}}' bindinput="inputValueChange"></input>
+                        <!--加-->
+                        <view class='up' hover-class='button-hover' bindtap='addNumber'>
+                            <text>+</text>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class='box-btn' bindtap='cartBoxClick'>确定</view>
+        </view>
+
+        <view class="ware-area">
+            <view class="item">
+                <view>{{wareHouseInfo.available_area}}㎡</view>
+                <view>可租面积</view>
+            </view>
+            <view class="border"></view>
+            <view class="item">
+                <view>{{wareHouseInfo.total_area}}㎡</view>
+                <view>总面积</view>
+            </view>
+            <view class="border"></view>
+            <view class="item">
+                <view>{{wareHouseInfo.start_area}}㎡</view>
+                <view>起租面积</view>
+            </view>
+        </view>
+        <view class="some-info">
+            <view class="item">
+                <view class="left">所在位置：</view>
+                <view class="center">
+                    <text>{{wareHouseInfo.province_name}}-{{wareHouseInfo.city_name}}-{{wareHouseInfo.district_name}}
+                    </text>
+                </view>
+                <view bindtap="lookMap" class="right" name="reverseGeo">
+                    <text>查看地图</text>
+                    <image src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">仓库编号：</view>
+                <view class="center">{{wareHouseInfo.wid}}</view>
+            </view>
+            <view class="item">
+                <view class="left">存储类型：</view>
+                <view class="center">
+          {{wareHouseInfo.service_types}}
+        </view>
+            </view>
+            <view class="item">
+                <view class="left">仓库类型：</view>
+                <view class="center">{{wareHouseInfo.storage_types}}</view>
+            </view>
+            <view class="item">
+                <view class="left">底层层高：</view>
+                <view class="center">{{wareHouseInfo.warehouse_height}}</view>
+            </view>
+        </view>
+        <view style="height:25rpx;"></view>
+            <view class="ware-content">
+                <view class="title">仓库详情</view>
+                <view class="some-info">
+                    <view class="item">
+                        <view class="left">仓库类型：</view>
+                        <view class="center">{{wareHouseInfo.storage_types}}</view>
+                    </view>
+                    <view class="item">
+                        <view class="left">底层层高：</view>
+                        <view class="center">{{wareHouseInfo.warehouse_height}}</view>
+                    </view>
+                </view>
+            </view>
+            <view style="height:25rpx;"></view>
+            <view class="ware-content">
+                <view class="title">设施信息</view>
+                <view class="some-info">
+                    <view class="item">
+                        <view class="left">地坪材质：</view>
+                        <view class="center">{{wareHouseInfo.ground_type}}</view>
+                    </view>
+                    <view class="item">
+                        <view class="left">仓库设施：</view>
+                        <view class="center">{{wareHouseInfo.facilities}}</view>
+                    </view>
+                    <view class="item">
+                        <view class="left">园区安保：</view>
+                        <view class="center">{{wareHouseInfo.security}}</view>
+                    </view>
+                </view>
+            </view>
+            <view style="height:25rpx;"></view>
+            <view class="ware-content">
+                <view class="title">园区详情</view>
+                <view class="some-info">
+                    <view class="item">
+                        <view class="left">建筑结构：</view>
+                        <view class="center">{{wareHouseInfo.building_str}}</view>
+                    </view>
+                    <view class="item">
+                        <view class="left">供电电压：</view>
+                        <view class="center">{{wareHouseInfo.voltage}}</view>
+                    </view>
+                    <view class="item">
+                        <view class="left">出入口个数：</view>
+                        <view class="center">{{wareHouseInfo.exit_entrance}}</view>
+                    </view>
+                </view>
+            </view>
+           
+            <view style="height:25rpx;"></view>
+            <view class="ware-content" style="min-height:100vh;">
+                <view class="title">仓库简介</view>
+                <view class="info">
+                    {{wareHouseInfo.detail}}
+                </view>
+            </view>
+        <view style="height:100rpx;"></view>
+        <view class="bottom">
+            <view class="left">
+                <view bindtap="toHome" class="item">
+                    <image mode="aspectFit" src="../../images/14@3x.png"></image>
+                    <view>首页</view>
+                </view>
+                <view bindtap="clickCollection" class="item">
+                    <image mode="aspectFit" src="../../images/collect.png" wx:if="{{status==1}}"></image>
+                    <image mode="aspectFit" src="../../images/uncollect.png" wx:elif="{{status==2||status==0}}"></image>
+                    <view>收藏</view>
+                </view>
+            </view>
+            <view bindtap="appointmentWareHourse" class="appoint center" style="width: 270rpx;">下单租仓</view>
+        </view>
+    </view>
+</view>

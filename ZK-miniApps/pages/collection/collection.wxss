@@ -1,0 +1,76 @@
+/* pages/collection/collection.wxss */
+.bg{
+  background-color: #fafafa;
+  padding-top: 20rpx;
+  height: 100vh;
+}
+.unlogin{
+  width: 80%;
+  height: 180px;
+  margin-left: 10%;
+}
+.list{
+  background:rgb(255, 255, 255);
+  font-size:30rpx;
+  margin:0 20rpx 20rpx 20rpx;
+  border-radius:20rpx !important;
+  padding-left: 20rpx;
+  padding-top: 22rpx;
+  padding-bottom: 22rpx;
+  display: flex;
+}
+.pic1{
+  width: 15px;
+  height: 15px;
+  margin-left: 2px;
+  margin-top: 5px;
+}
+.pic2{
+  width: 170rpx;
+  height: 190rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.pic3{
+  width: 50rpx;
+  height: 50rpx;
+}
+.pic4{
+  width: 20rpx;
+  height: 25rpx;
+}
+.left{
+  flex: 1;
+}
+.right{
+  flex: 3;
+}
+.name{
+  font-size: 35rpx;
+  display: flex;
+}
+.jian{
+  flex:1;
+}
+.address{
+  font-size: 32rpx;
+  margin-bottom: 5rpx;
+}
+.area{
+  font-size: 32rpx;
+  margin-bottom: 5rpx;
+}
+.price{
+  font-size: 32rpx;
+  margin-bottom: 5rpx;
+}
+.storage_types{
+  font-size: 32rpx;
+  margin-bottom: 5rpx;
+}
+.like{
+  margin-left: 80%;
+}
+.ic{
+  color: #ffa861;
+}

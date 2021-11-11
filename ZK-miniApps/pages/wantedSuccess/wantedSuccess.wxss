@@ -1,0 +1,64 @@
+/* pages/wantedSuccess/wantedSuccess.wxss */
+.contents {
+  background-color: #fff;
+  /* padding: 90rpx 50rpx; */
+}
+
+.successTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.successTitle image {
+  width: 70rpx;
+  height: 60rpx;
+}
+
+.successContent {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #ffa861;
+}
+
+.wait {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #2D323C;
+  margin-top: 36rpx;
+  text-align: center;
+}
+
+.btn1Container {
+  margin-top: 46rpx;
+}
+
+.btn1 {
+  width: 80%;
+  height: 80rpx;
+  background-color: #ffa861;
+  color: #fff;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #ffa861;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.btn2Container {
+  margin: 48rpx 0;
+}
+
+.btn2 {
+  width: 80%;
+  height: 80rpx;
+  background-color: #F3F4F6;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #F3F4F6;
+  color: #2D323C;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32rpx;
+}

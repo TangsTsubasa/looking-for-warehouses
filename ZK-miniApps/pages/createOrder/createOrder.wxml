@@ -1,0 +1,51 @@
+<view class="bg">
+  <view class="backbw">
+    <image src="/images/contact.png" class="pic1"></image>
+    <view class="t1">
+      {{contact_name}}
+      {{phone}}
+    </view>
+    <view class="jian" bindtap="chooseContact">
+      <image src="/images/6@3x.png" class="pic2"></image>
+    </view>
+  </view>
+  <view class="backbw1">
+    <view class="c1">
+      <image src="/images/cname.png" class="pic3"></image>
+      <view class="cname">{{company_name}} - {{ware_name}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="c1">
+      <image src="/images/wd.jpg" class="pic4"></image>
+      <view class="cprice">
+        <view>单价：<span class="rmb">￥</span>{{price}} 元/㎡·天</view>
+        <view class="t"><text class="t0">面积：{{area}} ㎡</text>
+        </view>
+        <view>时长：{{duration}}个月</view>
+      </view>
+    </view>
+    <view class="c2">
+      押金：<span class="rmb">￥{{deposit}}</span>
+    </view>
+    <view class="c2">注：请关注保险公司信息，并阅读<span class="rmb">《保险条款和重要说明》</span>。</view>
+    <view> 订单备注:
+      <input type="text" bindinput="remark"/>
+    </view>
+    <view class="c3">小计：<span class="rmb">￥{{total}}</span></view>
+  </view>
+  <!-- <view class="backbw1">
+    <view class="pay">
+      支付方式：
+      <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}" color="#ffa861">
+          <text>{{item.value}}</text>
+        </radio>
+      </radio-group>
+    </view>
+  </view> -->
+  
+  <view class="sub">
+    <view class="c4">合计：<span class="rmb">￥ {{total}}</span></view>
+    <button class="btn" bindtap="subOrder">提交订单</button>
+  </view>
+</view>

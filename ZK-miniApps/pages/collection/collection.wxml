@@ -1,0 +1,40 @@
+<view class="bg">
+  <view wx:if="{{role==2}}">
+    <image src="/images/unlogin.png" class="unlogin"></image>
+  </view>
+  <view wx:elif="{{role!=2}}">
+    <block wx:for="{{collectList}}" wx:item="collect" wx:key="this">
+      <view class="list">
+      <view class="left">
+        <image class="pic2" mode="aspectFill" src="../../images/whimg/w1.jpg"></image>
+      </view>
+      <view class="right">
+        <view class="name" bindtap="toDetail" data-wid="{{item.wid}}">
+          <text style="flex:6;">{{item.company_name}} - {{item.ware_name}}</text>
+          <view class="jian">
+            <image class="pic4" src="/images/6@3x.png"></image>
+          </view>
+        </view>
+        <view class="address">
+          <image class="pic1" mode="aspectFit" src="../../images/location.png"></image>
+          <text>{{item.province_name}} </text> <span class="ic">-</span>
+          <text>{{item.city_name}} </text> <span class="ic">-</span> {{item.district_name}}
+        </view>
+        <view class="area">
+          可租：{{item.available_area}}㎡ <span class="ic">|</span> 总面积: {{item.total_area}}㎡
+        </view>
+        <view class="price">
+          <view><span class="ic">￥</span>{{item.price}} 起(元/㎡·天)</view>
+        </view>
+        <view class="storage_types">
+          <view>仓库类型: {{item.storage_types}}</view>
+        </view>
+      </view>
+      </view>
+    </block>
+  </view>
+  <view wx:elif="{{user_id==0}}">
+    <image src="/images/unlogin.png"></image>
+    未登录
+  </view>
+</view>

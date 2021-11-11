@@ -1,0 +1,49 @@
+/* pages/common/radio/radio.wxss */
+.btn {
+  height: 100rpx;
+  width: 100%;
+  background-color: #ffa861;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  position: fixed;
+  bottom: 0;
+}
+
+.content {
+  background-color: #fff;
+  padding-left: 30rpx;
+}
+
+.listContainer {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #2D323C;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #EDEDED;
+  display: flex;
+  align-items: center;
+}
+
+.listContainer image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.listContainer:nth-last-of-type(1) {
+  border: none;
+}
+
+.radio {
+  width: 36rpx;
+  height: 36rpx;
+  display: flex;
+  border-radius: 50%;
+  border: 1rpx solid #EDEDED;
+}
+
+.label {
+  display: flex;
+  margin-left: 20rpx;
+}

@@ -1,0 +1,128 @@
+.container{
+    padding: 0px;
+}
+.topImage {
+    width: 100%;
+    height: 400rpx;
+}
+
+.wContainer {
+    width: 700rpx;
+    position: relative;
+    top: -140rpx;
+}
+
+.wContainer text {
+    color: #2D323C;
+}
+
+.oneContainer {
+    width: calc(100% - 60rpx);
+    padding: 0 30rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    margin-bottom: 22rpx;
+}
+
+.one {
+    display: flex;
+    height: 99rpx;
+    font-size: 28rpx;
+    line-height: 99rpx;
+    border-bottom: 1rpx solid #EDEDED;
+}
+
+.inputs {
+    display: inline-block;
+    text-align: right;
+    margin-right: 30rpx;
+    color: #2D323C;
+}
+
+.inputPlace {
+    color: #C7CDD3;
+}
+
+.left {
+    display: flex;
+}
+
+.container .star {
+    color: #FF500B;
+}
+
+.wContainer .selectName {
+    width: 80%;
+    text-align: right;
+    margin-right: 30rpx;
+    color: #2D323C;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wContainer .selectNames {
+    margin-right: 30rpx;
+    line-height: 32rpx;
+}
+
+.right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.jian {
+    width: 15rpx;
+    height: 20rpx;
+}
+
+.title {
+    color: #57616D;
+    padding: 30rpx 0 30rpx 30rpx;
+    font-size: 24rpx;
+}
+
+.two {
+    font-size: 28rpx;
+    padding-top: 30rpx;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 50rpx;
+}
+
+.btns {
+    width: 600rpx;
+    height: 80rpx;
+    color: #fff;
+    background-color: #ffa861;
+    border-radius: 60rpx;
+    font-size: 32rpx;
+}
+
+.dateContainer {
+    padding: 20rpx 0 0;
+    text-align: center;
+}
+
+.dateContainer .dateName {
+    width: 300rpx;
+    display: inline-block;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.dateContainer .noChooseStyle {
+    color: #C7CDD3;
+    border-bottom: 1rpx solid #C7CDD3;
+}
+
+.dateContainer .chooseStyle {
+    color: #ffa861;
+    border-bottom: 1rpx solid #ffa861;
+}

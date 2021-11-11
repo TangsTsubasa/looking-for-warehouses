@@ -1,0 +1,17 @@
+<!--pages/common/map/map.wxml-->
+<map id="myMap"
+ markers="{{markers}}" 
+ style="width:100%;height:100px;" 
+ longitude="{{poi.longitude}}" 
+ latitude="{{poi.latitude}}" 
+ scale='16' 
+ hidden="true" 
+ show-location></map>
+
+ <form bindsubmit="formSubmit">
+   <input class="inputs" style="border:1px solid #000;" placeholder="请输入省市区（县）及具体地址" placeholderClass="inputPlace" type="text" name="address"></input>
+    <view class="t1">*如：北京市海淀区彩和坊路海淀西大街74号</view>
+    <!--提交表单数据-->
+    <button form-type="submit">确定</button>
+    <view hidden="true">{{poi.latitude}}{{poi.longitude}}</view>
+</form>

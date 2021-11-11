@@ -1,0 +1,59 @@
+/* pages/checkOffer/checkOffer.wxss */
+.bg{
+  background-color: #fafafa;
+  height: 100vh;
+  padding-top: 20rpx;
+}
+.list{
+  margin-top: 20rpx;
+}
+.need{
+  margin: 10rpx 2% 0 2%;
+  font-size: 30rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius:20rpx !important;
+  padding: 20rpx;
+}
+.detail{
+  display: flex;
+}
+.pic{
+  flex: 1;
+  height: 200rpx;
+}
+.cwn{
+  flex: 2;
+  margin-left: 20rpx;
+}
+.cn{
+  font-size:40rpx;
+}
+.location{
+  font-size:35rpx;
+  display: flex;
+  margin-top: 20rpx;
+}
+.locicon{
+  flex: 1;
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.loc{
+  flex:13;
+  font-size: 30rpx;
+}
+.offer_price{
+  margin-left: 50%;
+  font-size: 35rpx;
+}
+.btn1{
+  margin: 20rpx 0 20rpx 350rpx;
+}
+#btn{
+  width: 250rpx;
+  font-size: 30rpx;
+  background-color:#ffa861;
+  border-radius:100rpx;
+  color: #fff;
+}

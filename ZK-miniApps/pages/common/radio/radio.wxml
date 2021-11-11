@@ -1,0 +1,15 @@
+<!--pages/common/radio/radio.wxml-->
+<view class="container">
+    <view class="content">
+        <view bindtap="radioChange" class="listContainer" data-index="{{index}}" wx:for="{{items}}" wx:key="index">
+            <view class="radio">
+                <image mode="aspectFit" src="../../../images/33@3x.png" wx:if="{{item.checked}}"></image>
+                <image mode="aspectFit" src="../../../images/34@3x.png" wx:else></image>
+            </view>
+            <view class="label">{{item.name||item.value}}</view>
+        </view>
+    </view>
+    <view style="height:100rpx"></view>
+    <view bindtap="sureChoose" class="btn">确认选择内容</view>
+</view>
+

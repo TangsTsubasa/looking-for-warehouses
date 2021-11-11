@@ -1,0 +1,117 @@
+<form bindsubmit="addCompanyauth">
+    <view class="wContainer">
+        <view class="oneContainer">
+            <view class="one">
+                <view class="left">
+                     <!-- <text class="star">*</text>  -->
+                    <text>公司名称</text>
+                </view>
+                <view class="right">
+                    <input name="company_name" class="inputs" placeholder="请输入公司名称" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <!-- <text class="star">*</text> -->
+                    <text>联系人</text>
+                </view>
+                <view class="right">
+                    <input name="contact_name" class="inputs" placeholder="请输入联系人" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <!-- <text class="star">*</text> -->
+                    <text>身份证</text>
+                </view>
+                <view class="right">
+                    <input name="id_card" class="inputs" placeholder="请输入身份证编号" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <text>类别</text>
+                </view>
+                <view class="right">
+                    <picker bindchange="bindPickerClass" mode="selector" value="{{classIndex}}" range="{{classArr}}" range-key="cl">
+                    <view class="picker">
+                    {{classArr[classIndex].cl}}
+                    </view>
+                    </picker>
+                    <image class="jian" src="../../images/6@3x.png"></image>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <!-- <text class="star">*</text> -->
+                    <text>电话</text>
+                </view>
+                <view class="right">
+                    <input name="phone" class="inputs" placeholder="请输入联系人电话" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+            </view>
+            <view class="one">
+                <view class="left">
+                    <!-- <text class="star">*</text> -->
+                    <text>邮箱</text>
+                </view>
+                <view class="right">   
+                    <input name="email" class="inputs" placeholder="请输入联系人邮箱" placeholderClass="inputPlace" type="text" ></input>
+                </view>
+            </view>
+            <view class="one" style="border-bottom: none;">
+                <view class="left">
+                    <!-- <text class="star">*</text> -->
+                    <text>详细地址</text>
+                </view>
+                <view class="right">
+                    <input name="address" class="inputs" placeholder="请输入详细地址" placeholderClass="inputPlace" type="text"></input>
+                </view>
+            </view>
+        </view>
+         <view class="imageContainer">
+            <view class="imageTitle">
+               上传公司营业执照</view>
+               <image src="{{photo1}}" class="image" bindtap="uplicense"></image>    
+        </view>
+        <view class="imageContainer">
+            <view class="imageTitle">
+              上传食品生产许可证</view>
+               <image src="{{photo2}}" class="image1" bindtap="upproduction"></image>
+        </view>
+        <view class="card-name">请上传身份证认证</view>
+       <view class="card-cont">
+         <view class="card-list">
+            <image src='{{photos}}' id="1" bindtap='touchphoto' mode='aspectFit' name="img1"></image>
+            <view>身份证正面照</view>
+         </view>
+         <view class="card-list">
+            <image src='{{photos2}}' id="2" bindtap='touchphoto' mode='aspectFit'></image>
+            <view>身份证反面照</view>
+         </view>
+         <view class="card-list">
+            <image src='{{photos3}}' id="3" bindtap='touchphoto' mode='aspectFit'></image>
+            <view>手持身份证照</view>
+         </view>
+       </view>
+        <!-- 
+        <view class="imageContainer">
+            <view class="imageTitle">
+               上传食品生产许可证
+            </view>
+            
+        </view>
+        <view class="imageContainer">
+            <view class="imageTitle">
+               上传身份证
+            </view>
+            
+        </view>-->
+       
+    </view>  
+    <view class="btn">
+        <button form-type="submit" class="btns" style="width:100%" >提交认证</button>
+    </view>
+</form>
+
+ 

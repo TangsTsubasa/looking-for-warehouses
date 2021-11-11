@@ -1,0 +1,21 @@
+/* pages/offer/offer.wxss */
+@import"../find/find.wxss";
+.bg{
+  background-color: #fafafa;
+  padding-top: 20rpx;
+  height: 100vh;
+}
+.ct{
+  margin: 20rpx 0 20rpx 20rpx;
+  font-size: 35rpx;
+}
+.list{
+  margin-bottom: 20rpx;
+}
+#btn0{
+  width: 250rpx;
+  font-size: 30rpx;
+  background-color:#ffa861;
+  border-radius:100rpx;
+  color: #fff;
+}

@@ -1,0 +1,98 @@
+/* pages/feedback/feedback.wxss */
+.chooseContainer {
+  padding: 40rpx 30rpx;
+  background-color: #fff;
+}
+
+.chooseTitle {
+  color: #57616D;
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+}
+
+.chooseStyle {
+  display: inline-block;
+  padding: 15rpx 35rpx;
+  font-size: 24rpx;
+  color: #818EA1;
+  border: 1rpx solid #818EA1;
+  border-radius: 10rpx;
+  margin-right: 40rpx;
+}
+
+.choosedStyle {
+  color: #ffa861;
+  border: 1rpx solid #ffa861;
+}
+
+.fontContainer {
+  height: 240rpx;
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+
+.fontContainer textarea {
+  width: calc(100% - 60rpx);
+  height: calc(100% - 60rpx);
+  padding: 30rpx;
+}
+
+.placeStyle {
+  color: #C7CDD3;
+  font-size: 28rpx;
+}
+
+.imageContainer {
+  padding: 30rpx;
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+
+.imgs {
+  display: flex;
+}
+
+.oneImageContainer {
+  width: 222rpx;
+  height: 212rpx;
+  display: flex;
+  flex: 1;
+  margin-right: 15rpx;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.oneImageContainer .img {
+  width: 100%;
+  height: 100%;
+}
+
+.oneImageContainer .close-img {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}
+
+.oneImageContainer:nth-last-of-type(1) {
+  margin-right: 0;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.btns {
+  
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+  background-color:#ffa861;
+  border-radius: 0;
+  font-size: 32rpx;
+}

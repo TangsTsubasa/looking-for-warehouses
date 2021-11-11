@@ -1,0 +1,92 @@
+<!--pages/find/find.wxml-->
+<view class="bg">
+    <view class="bgsh">
+        <view class="swiper-tab">
+            <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="tabNav">{{first}}
+            <i></i>
+            </view>
+            <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="tabNav">{{second}}
+            <i></i>
+            </view>
+            <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="tabNav">{{third}}
+            <i></i>
+            </view>
+        </view>
+        <swiper current="{{currentTab}}" duration="1000" class="swiper-item" style='display:{{displays}}'>
+            <!-- 分类一start-->
+            <swiper-item>
+                <view class="change">
+                    <view class="nav bc_white">
+                        <view class="{{selected?'red':'default'}}" wx:for="{{cityleft}}" bindtap="selected" wx:key="index" data-city="{{index}}">{{index}}</view>
+                    </view>
+                    <view id="rights">
+                        <view class="{{selected?'show':'hidden'}}">
+                            <view class="{{_sum == 1?'add_adress':'add_city'}}" wx:for="{{cityright}}" wx:key="index" bindtap="clickCity" data-name="{{item}}">{{item}}</view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+            <!-- 分类一end -->
+            <!-- 分类二start -->
+            <swiper-item>
+                <view class="location_bottom" hidden="">
+                    <view class="{{_num == 1?'add_citying':'add_city'}}" data-num="0" bindtap="clickArea" 
+                    data-name="≥0m²">≥0m²</view>
+                    <view class="{{_num == 2?'add_citying':'add_city'}}" data-num="1000" bindtap="clickArea" data-name="≥1000m²">≥1000m²</view>
+                    <view class="{{_num == 3?'add_citying':'add_city'}}" data-num="5000" bindtap="clickArea" data-name="≥5000m²">≥5000m²</view>
+                    <view class="{{_num == 3?'add_citying':'add_city'}}" data-num="10000" bindtap="clickArea" data-name="≥10000m²">≥10000m²</view>
+                </view>
+            </swiper-item>
+            <!-- 分类二end -->
+            <!--分类三start-->
+            <swiper-item>
+                <view class="location_bottom" hidden="">
+                    <view class="{{_res == 1?'add_House':'add_city'}}" data-num="冷库" bindtap="clickType" data-name="冷库">冷库</view>
+                    <view class="{{_res == 2?'add_House':'add_city'}}" data-num="恒温" bindtap="clickType" data-name="恒温">恒温</view>
+                </view>
+            </swiper-item>
+            <!-- 分类三end -->
+    </swiper>
+    <view class="swiper-beijing" bindtap="hideNav" style='display:{{displays}}'></view>
+        <view style="height:15rpx;"></view>
+        <!-- <view class="list"> -->
+            <view class="ware-list">
+                <block wx:for="{{wareHouseList}}" wx:item="wareHouse" wx:key="this">
+                <view class="need">
+                    <view class="left">
+                        <image class="pic2" mode="aspectFill" src="{{item.ware_img}}"></image>
+                    </view>
+                    <view class="right" bindtap="toDetail" data-id="{{item.wid}}">
+                        <view class="name">
+                            {{item.company_name}}
+                        </view>
+                        <view class="address">
+                            <image class="pic1" mode="aspectFit" src="../../images/location.png"></image>
+                            <text>{{item.province_name}}-</text>
+                            <text>{{item.city_name}}</text> - {{item.district_name}}
+                        </view>
+                        <view class="area">
+                            可租：{{item.available_area}}㎡ |
+                            <!-- <view style=" width: 2rpx;height: 22rpx;background: #cecece;margin: 0 20rpx;float:right"></view> -->
+                            总面积: {{item.total_area}}㎡
+                        </view>
+                        <view class="price">
+                            <view>￥{{item.price}} 起(元/㎡·天)</view>
+                        </view>
+                        <view class="storage_types">
+                            <view>仓库类型: {{item.storage_types}}</view>
+                        </view>
+                    </view>
+                    <!-- <view class="line"></view> -->
+                </view>
+                </block>
+            </view>
+        <!-- </view> -->
+        
+    </view>
+    <view wx:if="{{warehouseList.length==0}}">
+        <no-data tip="暂无相关仓库"></no-data>
+    </view>
+    <view style="height:130rpx;"></view>
+</view>
+<share></share>

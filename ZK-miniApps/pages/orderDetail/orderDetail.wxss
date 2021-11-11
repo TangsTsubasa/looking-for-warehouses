@@ -1,0 +1,18 @@
+/* pages/orderDetail/orderDetail.wxss */
+@import"../createOrder/createOrder.wxss";
+.oi{
+  font-size: 35rpx;
+  margin: 2%;
+}
+.oi1{
+  margin: 1% 2%;
+  font-size: 30rpx;
+}
+.oi2{
+  margin: 2%;
+  border-top: solid #fafafa 5rpx;
+}
+.pic5{
+  width: 50rpx;
+  height: 50rpx;
+}

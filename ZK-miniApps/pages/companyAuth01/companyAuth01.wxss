@@ -1,0 +1,150 @@
+.container{
+  margin-top: 20rpx;
+}
+.topContainer {
+    height: 64rpx;
+    background-color: #E9EDF5;
+    line-height: 64rpx;
+    display: flex;
+    align-items: center;
+}
+
+.topContainer image {
+    width: 30rpx;
+    height: 27rpx;
+    margin: 0 25rpx 0 30rpx;
+}
+
+.topContainer text {
+    font-size: 24rpx;
+    color: #2D323C;
+}
+
+.wContainer {
+    padding-bottom: 120rpx;
+}
+
+.wContainer text {
+    color: #2D323C;
+}
+
+.oneContainer {
+    width: calc(100% - 30rpx);
+    padding: 0 0 0 30rpx;
+    background-color: #fff;
+}
+
+.one {
+    display: flex;
+    height: 99rpx;
+    font-size: 28rpx;
+    line-height: 99rpx;
+    border-bottom: 1rpx solid #EDEDED;
+}
+
+.star {
+    color: #FF500B;
+}
+
+.inputs {
+    display: inline-block;
+    text-align: right;
+    width: 85%;
+    color: #2D323C;
+}
+
+.inputPlace {
+    color: #C7CDD3;
+}
+
+.left {
+    display: flex;
+}
+
+.container .star {
+    color: #FF500B;
+}
+
+.wContainer .selectName {
+    margin-right: 30rpx;
+    width: 80%;
+    line-height: 40rpx;
+    text-align: right;
+}
+
+.wContainer .selectNames {
+    margin-right: 30rpx;
+    line-height: 32rpx;
+    text-align: right;
+}
+
+.right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30rpx;
+}
+
+.jian {
+    width: 15rpx;
+    height: 20rpx;
+}
+
+.imageContainer {
+    padding: 30rpx;
+    background-color: #fff;
+    margin-top: 30rpx;
+}
+
+.imageTitle {
+    font-size: 28rpx;
+    color: #2D323C;
+    margin-bottom: 50rpx;
+}
+
+.img {
+    text-align: center;
+}
+
+.img image {
+    width: 550rpx;
+    height: 330rpx;
+    border-radius: 20rpx;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.btns {
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #fff;
+    background-color: #ffa861;
+    border-radius: 0;
+    font-size: 32rpx;
+}
+
+.btnes {
+    background-color: rgba(124,157,228,0.1);
+    
+}
+.image {
+    width: 60%;
+    height: 130px;
+    margin-left: 55px;
+}
+.image1 {
+    width: 60%;
+    height: 130px;
+    margin-left: 55px;
+}
+.image2{
+    width: 60%;
+    height: 130px;
+    margin-left: 55px;
+}

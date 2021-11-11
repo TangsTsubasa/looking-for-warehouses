@@ -1,0 +1,75 @@
+<view class="bg">
+    <view class="swiper-tab">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="tabNav">{{first}}
+        <i></i>
+        </view>
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="tabNav">{{second}}
+        <i></i>
+        </view>
+    </view>
+    <swiper current="{{currentTab}}" duration="1000" class="swiper-item" style='display:{{displays}}'>
+    <!-- 分类一start-->
+    <swiper-item>
+    <view class="change">
+         <view class="nav bc_white">
+            <view class="{{selected?'red':'default'}}" wx:for="{{cityleft}}" bindtap="selected" wx:key="index" data-city="{{index}}">{{index}}</view>
+        </view>
+        <view id="rights">
+            <view class="{{selected?'show':'hidden'}}">
+                <view class="{{_sum == 1?'add_adress':'add_city'}}" wx:for="{{cityright}}" wx:key="index" bindtap="clickCity" data-name="{{item}}">{{item}}</view>
+            </view>
+        </view>
+    </view>
+    </swiper-item>
+    <!-- 分类一end -->
+    <!-- 分类二start -->
+    <swiper-item>
+        <view class="location_bottom" hidden="">
+        <view class="{{_num == 1?'add_citying':'add_city'}}" data-num="0" bindtap="clickArea" 
+        data-name="≥0m²">≥0m²</view>
+        <view class="{{_num == 2?'add_citying':'add_city'}}" data-num="1000" bindtap="clickArea" data-name="≥1000m²">≥1000m²</view>
+        <view class="{{_num == 3?'add_citying':'add_city'}}" data-num="2000" bindtap="clickArea" data-name="≥2000m²">≥2000m²</view>
+        <view class="{{_num == 3?'add_citying':'add_city'}}" data-num="3000" bindtap="clickArea" data-name="≥3000m²">≥3000m²</view>
+        </view>
+    </swiper-item>
+    <!-- 分类二end -->
+    </swiper>
+    <view class="swiper-beijing" bindtap="hideNav" style='display:{{displays}}'></view>
+
+    <view style="height:10px"></view>
+    <view class="wanted">
+        <block wx:for="{{wantedMarketList}}" wx:item="wantedMarket" wx:key="this">
+        <view class="need">
+            <text class="noti">编号：{{item.sn}}</text>
+            <text class="noti2">{{item.created_time}}</text>
+            <view class="line"></view>
+            <view class="detail">
+            <text class="n1">面积： {{item.area}}m²</text>
+            <text class="n2">单价： {{item.price}}元/m²天</text>
+            </view>
+            <view class="detail">
+            <text class="n1">租期： {{item.lease_period}}</text>
+            <text class="n2">启用： {{item.start_date}}</text>
+            </view>
+            <view class="detail">
+            <text class="n1">区域： {{item.province_name}}-{{item.city_name}}</text>
+            <text class="n2">服务方式： {{item.service_type}}</text>
+            </view>
+            <view class="detail">
+            <text class="n1">备注：{{item.remark}}</text>
+            </view>
+            <view class="btn1">
+            <button id="btn" bindtap="toOffer" data-cname="{{item.city_name}}" data-sn="{{item.sn}}">我要报价</button>
+            </view>
+            <view class="line"></view>
+        </view>
+        </block>
+    </view>
+    <view style="height: 130rpx;"></view>
+    <view wx:if="{{wantedMarketList.length==0}}">
+        <no-data tip="暂无求租记录"></no-data>
+    </view>
+
+</view>
+
+<share></share>

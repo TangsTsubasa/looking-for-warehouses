@@ -1,0 +1,9 @@
+<!--pages/common/mapdetail/mapdetail.wxml-->
+具体位置：{{address}}
+<map id="myMap"
+ markers="{{markers}}" 
+ style="width:100%;height:400px;" 
+ longitude="{{poi.longitude}}" 
+ latitude="{{poi.latitude}}" 
+ scale='16' 
+ show-location></map>

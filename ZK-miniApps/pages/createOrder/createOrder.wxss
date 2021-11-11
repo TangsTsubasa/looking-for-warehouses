@@ -1,0 +1,113 @@
+.bg{
+  background-color: #fafafa;
+  padding-top:10rpx;
+}
+.backbw{
+  margin: 2% 4% 0 4%;
+  font-size: 30rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius:20rpx !important;
+  padding: 30rpx;
+  display: flex;
+}
+.backbw1{
+  margin: 2% 4% 2% 4%;
+  font-size: 30rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius:20rpx !important;
+  padding: 30rpx 30rpx 80rpx 30rpx;
+}
+.pic1{
+  width: 150rpx;
+  height: 150rpx;
+  display: flex;
+  flex: 3;
+}
+.pic2{
+  width: 25rpx;
+  height: 35rpx;
+}
+.pic3{
+  width: 50rpx;
+  height: 50rpx;
+  flex: 1;
+}
+.pic4{
+  width: 220rpx;
+  height: 200rpx;
+  flex: 1;
+}
+.jian{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+.t1{
+  display: flex;
+  flex: 8;
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  align-items: center;
+  justify-content: center;
+}
+.c1{
+  display: flex;
+  margin-bottom: 30rpx;
+}
+.cname{
+  width: 100%;
+  font-size: 35rpx;
+  flex: 14;
+  margin-left: 20rpx;
+}
+.cprice{
+  flex: 2;
+  margin-left: 90rpx;
+}
+.c2{
+  margin-bottom: 20rpx;
+}
+.c3{
+  float: right;
+  margin-bottom: 20rpx;
+}
+.c4{
+  flex: 2;
+  margin-top: 20rpx;
+}
+.radio-group {
+  border-bottom: 1px solid #ddd;
+}
+.radio {
+  display: block;
+  /* border-top: 1px solid #ddd; */
+  padding: 5px;
+}
+.sub{
+  margin-top: 50rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  display: flex;
+  font-size: 30rpx;
+}
+.rmb{
+  color: #ffa861;
+}
+.btn{
+  flex: 1;
+  font-size: 35rpx;
+  background-color: #ffa861;
+}
+.line{
+  border-bottom: 1rpx solid #fafafa;
+  margin-bottom: 30rpx;
+}
+.t{
+  display: flex;
+  font-size: 30rpx;
+}
+.t0{
+  flex: 4;
+  font-size: 30rpx;
+}

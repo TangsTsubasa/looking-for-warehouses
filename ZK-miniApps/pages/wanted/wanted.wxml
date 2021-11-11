@@ -1,0 +1,39 @@
+<view class="bg">
+  <view class="btn">
+    <view class="title">已发布</view>
+    <button id="btnpublish" bindtap="toPublish">需求发布</button>
+  </view>
+  <view wx:if="{{role==2}}">
+    <image src="/images/unlogin.png" class="unlogin"></image>
+  </view>
+  <view class="list" wx:elif="{{role!=2}}">
+    <block wx:for="{{wantedList}}" wx:item="wanted" wx:key="this">
+      <block wx:for="{{item.wantedMarkets}}" wx:item="wanted" wx:key="this">
+        <view class="need">
+          <text class="noti">编号：{{item.sn}}</text>
+          <text class="noti2">{{item.created_time}}</text>
+          <view class="line"></view>
+          <view class="detail">
+            <text class="n1">面积： {{item.area}}m²</text>
+            <text class="n2">单价： {{item.price}}元/m²天</text>
+          </view>
+          <view class="detail">
+            <text class="n1">租期： {{item.lease_period}}</text>
+            <text class="n2">启用： {{item.start_date}}</text>
+          </view>
+          <view class="detail">
+            <text class="n1">区域： {{item.province_name}}-{{item.city_name}}</text>
+            <text class="n2">服务方式： {{item.service_type}}</text>
+          </view>
+          <view class="detail">
+            <text class="n1">备注：{{item.remark}}</text>
+          </view>
+          <view class="btn1">
+            <button class="btni" bindtap="del" data-sn="{{item.sn}}">删除需求</button>
+            <button class="btni" bindtap="toCheckOffer" data-sn="{{item.sn}}">查看报价</button>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>

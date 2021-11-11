@@ -1,0 +1,26 @@
+<view class="bg">
+  <view class="list">
+    <block wx:for="{{offerList}}" wx:item="offer" wx:key="this">
+      <view class="need">
+        <view class="detail">
+          <image src="{{item.wareHouse.ware_img}}" class="pic"></image>
+          <view class="cwn">
+            <view class="cn">{{item.wareHouse.company_name}} - {{item.wareHouse.ware_name}}</view>
+            <view class="location">
+              <image src="/images/location.png" class="locicon"></image>
+              <view class="loc">
+                {{item.wareHouse.province_name}} - {{item.wareHouse.city_name}} - {{item.wareHouse.district_name}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="offer_price">报价：<span style="color:#ffa861;">{{item.offer_price}} 元/m²天</span></view>
+        <view class="btn1">
+          <button id="btn" bindtap="toWareDetail" data-wid="{{item.wareHouse.wid}}" 
+          data-oprice="{{item.offer_price}}">查看仓库</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+

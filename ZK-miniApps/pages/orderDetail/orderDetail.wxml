@@ -1,0 +1,33 @@
+<view class="bg">
+  <view class="backbw1">
+    <view class="c1">
+      <image src="/images/cname.png" class="pic3"></image>
+      <view class="cname">{{OrderInfo.company_name}} - {{OrderInfo.ware_name}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="c1">
+      <image src="/images/wd.jpg" class="pic4"></image>
+      <view class="cprice">
+        <view>单价：<span class="rmb">￥</span>{{OrderInfo.price}} 元/㎡·天</view>
+        <view class="t"><text class="t0">面积：{{OrderInfo.area}} ㎡</text>
+        </view>
+        <view>时长：{{OrderInfo.duration}}个月</view>
+      </view>
+    </view>
+    <view class="c2">
+      押金：<span class="rmb">￥{{OrderInfo.deposit}}</span>
+    </view>
+    <view> 订单备注:{{OrderInfo.remark}}
+    </view>
+    <view class="c3">实付款：<span class="rmb">￥{{OrderInfo.total}}</span></view>
+  </view>
+  <view class="backbw1">
+    <view class="oi">订单信息</view>
+    <view class="oi1">订单编号：{{OrderInfo.order_id}}</view>
+    <view class="oi1">创建时间：{{create_time}}</view>
+    <view class="oi1">付款时间：</view>
+    <view class="oi1">成交时间：{{complete_time}}</view>
+    <view class="oi1">取消时间：{{cancel_time}}</view>
+    <view class="oi2"><image src="/images/phone.png" class="pic5"></image>拨打电话</view>
+  </view>
+</view>

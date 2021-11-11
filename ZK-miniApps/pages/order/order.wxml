@@ -1,0 +1,64 @@
+<view class="bg">
+    <scroll-view scroll-x="true" class="navbar-box">
+        <block wx:for="{{recordMain}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item" data-current="{{idx}}" bindtap="switchNav">
+                <text class="{{currentTab == idx ? 'active' : ''}}">{{navItem.title}}</text>
+            </view>
+        </block>
+    </scroll-view>
+    <swiper style="height:{{winHeight - 40}}px;" class="tab-box" current="{{currentTab}}" duration="300" data-current="{{idx}}" bindchange="switchTab">
+        <swiper-item style="height:100%;overflow-y:scroll" wx:for="{{[0,1,2,3,4]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-cnetent">
+        <view wx:if="{{role==2}}">
+            <image src="/images/unlogin.png" class="unlogin"></image>
+        </view>
+        <view wx:elif="{{role!=2}}">
+        <block wx:for="{{orderList}}" wx:item="order" wx:key="this">
+            <block wx:for="{{item.orderTables}}" wx:item="order" wx:key="this">
+                <view class="backbw">
+                    <view class="c1" bindtap="toDetail" data-wid="{{item.wid}}">
+                        <view class="logo">
+                            <image src="/images/cname.png" class="pic3"></image>
+                        </view>
+                        <view class="cname">{{item.company_name}}</view>
+                        <view class="jian">
+                            <image src="/images/6@3x.png" class="pic2"></image>
+                        </view>
+                    </view>
+                    <view class="line"></view>
+                    <view class="content">
+                        <image src="/images/wd.jpg" class="pic4"></image>
+                        <view class="mess">
+                            <view class="ite">
+                                <view class="i1">{{item.ware_name}}</view>
+                                <view class="i2">￥ {{item.price}}</view>
+                            </view>
+                            <view class="i3">已选：× {{item.area}} ㎡ , {{item.duration}} 个月</view>
+                            <view class="i4">实付款:￥ {{item.total}}</view>
+                        </view>
+                    </view>
+                    <view wx:if="{{currentTab==0||currentTab==4}}" style="display:flex;text-align: right;">
+                        <view style="flex:2;"></view>
+                        <button class="btn1" bindtap="toOrderDetail" data-id="{{item.order_id}}">详情</button>
+                    </view>
+                    <view wx:elif="{{currentTab==1}}" style="display:flex;text-align: right;">
+                        <view style="flex:2;"></view>
+                        <button class="btn1">付款</button>
+                        <button class="btn1" bindtap="cancel" data-oid="{{item.order_id}}" data-cb="{{1}}">取消交易</button>
+                    </view>
+                    <view wx:elif="{{currentTab==2}}" style="display:flex;text-align: right;">
+                        <view style="flex:2;"></view>
+                        <button class="btn1" bindtap="confirm" data-oid="{{item.order_id}}">确认完成</button>
+                        <button class="btn1" bindtap="cancel" data-oid="{{item.order_id}}" data-cb="{{2}}">取消交易</button>
+                    </view>
+                    <view wx:elif="{{currentTab==3}}" style="display:flex;text-align: right;">
+                        <view style="flex:2;"></view>
+                        <button class="btn1" bindtap="toOrderDetail" data-id="{{item.order_id}}">详情</button>
+                        <button class="btn1" bindtap="toCreate" data-wid="{{item.wid}}">再来一单</button>
+                    </view>
+                </view>            
+            </block>
+        </block>
+        </view>
+        </swiper-item>
+    </swiper>
+</view>
